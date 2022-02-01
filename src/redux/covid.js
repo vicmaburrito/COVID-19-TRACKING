@@ -11,6 +11,7 @@ export const getCountries = () => (dispatch) => {
     try {
       const fetching = await fetch(URL);
       const countries = await fetching.json();
+      console.log(countries);
       const payload = countries.map((country) => ({
         id: country.id,
         name: country.countries,
