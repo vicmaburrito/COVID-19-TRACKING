@@ -11,7 +11,7 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/most-views" element={<SomeComponent />} />
+        <Route path="/SomeComponent" element={<SomeComponent />} />
       </Routes>
     </BrowserRouter>
   );
