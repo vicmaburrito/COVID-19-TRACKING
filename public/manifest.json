@@ -1,0 +1,6 @@
+{
+  "short_name": "Covid-19 Tracket",
+  "name": "Covid-19 Tracket",
+  "start_url": ".",
+  "display": "standalone"
+}
