@@ -1,12 +1,14 @@
 import fetchApi from './API';
 
 const GET_COUNTRIES = 'GET_COUNTRIES';
-const COUNTRIES_SUCCESS = 'COUNTRIES_SUCCESS';
-const FAILED = 'FAILED';
+const GET_COUNTRIES_SUCCESS = 'GET_COUNTRIES_SUCCESS';
+const GET_COUNTRIES_FAILED = 'GET_COUNTRIES_FAILED';
+
 const initialState = { countries: [], loading: true, error: null };
 
 export const getCountries = () => (dispatch) => {
   dispatch({ type: GET_COUNTRIES });
+
   const fetchCountries = async () => {
     try {
       const countries = await fetchApi();
@@ -14,10 +16,10 @@ export const getCountries = () => (dispatch) => {
         id: country.id,
         name: country.name,
       }));
-      dispatch({ type: COUNTRIES_SUCCESS, payload });
+      dispatch({ type: GET_COUNTRIES_SUCCESS, payload });
     } catch (e) {
       dispatch({
-        type: FAILED,
+        type: GET_COUNTRIES_FAILED,
         payload: 'error',
       });
     }
@@ -26,12 +28,12 @@ export const getCountries = () => (dispatch) => {
 };
 
 export const covidReducer = (state = initialState, action) => {
-  switch (action.types) {
+  switch (action.type) {
     case GET_COUNTRIES:
       return { ...state, loading: true };
-    case COUNTRIES_SUCCESS:
+    case GET_COUNTRIES_SUCCESS:
       return { ...state, loading: false, countries: action.payload };
-    case FAILED:
+    case GET_COUNTRIES_FAILED:
       return { ...state, loading: false, error: action.payload };
     default:
       return state;

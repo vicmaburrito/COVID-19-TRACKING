@@ -1,24 +1,24 @@
-import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { getCountries } from '../../redux/covid';
+import React from 'react';
+import { useSelector } from 'react-redux';
 
 const Countries = () => {
-  const dispatch = useDispatch();
-  const { countries } = useSelector((state) => state.covidReducer);
-
-  useEffect(() => {
-    dispatch(getCountries());
-  }, [dispatch]);
+  const { loading, countries, error } = useSelector((state) => state.covidReducer);
+  console.log(countries[0]);
 
   return (
     <div className="container">
-      {
-      countries.map((country) => (
-        <div key={country.id}>
-          {console.log(country)}
+      {error && <span className="mt-5 h3 font-weight-bold">{error}</span>}
+      {loading ? (
+        <div className="d-flex justify-content-center mt-5">
+          <span className="mt-5 h3 font-weight-bold">Loading...</span>
         </div>
-      ))
-      }
+      ) : (
+        countries.map((country) => (
+          <div key={country.id} className="d-flex rocket-item pt-4">
+            <h4>{country.name}</h4>
+          </div>
+        ))
+      )}
     </div>
   );
 };
