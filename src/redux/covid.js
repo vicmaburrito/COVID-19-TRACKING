@@ -1,21 +1,21 @@
 import { URL } from './API';
 
-const GET_COUNTRYS = 'GET_COUNTRYS';
-const COUNTRYS_SUCCESS = 'COUNTRYS_SUCCESS';
+const GET_COUNTRIES = 'GET_COUNTRIES';
+const COUNTRIES_SUCCESS = 'COUNTRIES_SUCCESS';
 const FAILED = 'FAILED';
 const initialState = { contrys: [], loading: true, error: null };
 
-export const getCountrys = () => (dispatch) => {
-  dispatch({ type: GET_COUNTRYS });
-  const fetchCountrys = async () => {
+export const getCountries = () => (dispatch) => {
+  dispatch({ type: GET_COUNTRIES });
+  const fetchCountries = async () => {
     try {
       const fetching = await fetch(URL);
-      const countrys = await fetching.json();
-      const payload = countrys.map((country) => ({
+      const countries = await fetching.json();
+      const payload = countries.map((country) => ({
         id: country.id,
         name: country.countries,
       }));
-      dispatch({ type: COUNTRYS_SUCCESS, payload });
+      dispatch({ type: COUNTRIES_SUCCESS, payload });
     } catch (e) {
       dispatch({
         type: FAILED,
@@ -23,14 +23,14 @@ export const getCountrys = () => (dispatch) => {
       });
     }
   };
-  fetchCountrys();
+  fetchCountries();
 };
 
 export const covidReducer = (state = initialState, action) => {
   switch (action.types) {
-    case GET_COUNTRYS:
+    case GET_COUNTRIES:
       return { ...state, loading: true };
-    case COUNTRYS_SUCCESS:
+    case COUNTRIES_SUCCESS:
       return { ...state, loading: false, contrys: action.payload };
     case FAILED:
       return { ...state, loading: false, error: action.payload };

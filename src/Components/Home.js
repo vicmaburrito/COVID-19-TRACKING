@@ -1,11 +1,9 @@
 import React from 'react';
-import Countrys from './Countrys/Country';
+import Countries from './Countries/Country';
 
 function Home() {
   return (
-    <>
-      <Countrys />
-    </>
+    <Countries />
   );
 }
 
