@@ -16,7 +16,7 @@ const Countries = () => {
       {
       countries.map((country) => (
         <div key={country.id}>
-          <p>{country.name}</p>
+          <p>{console.log(country)}</p>
         </div>
       ))
       }

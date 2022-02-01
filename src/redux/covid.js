@@ -3,7 +3,7 @@ import { URL } from './API';
 const GET_COUNTRIES = 'GET_COUNTRIES';
 const COUNTRIES_SUCCESS = 'COUNTRIES_SUCCESS';
 const FAILED = 'FAILED';
-const initialState = { contrys: [], loading: true, error: null };
+const initialState = { countries: [], loading: true, error: null };
 
 export const getCountries = () => (dispatch) => {
   dispatch({ type: GET_COUNTRIES });
@@ -31,7 +31,7 @@ export const covidReducer = (state = initialState, action) => {
     case GET_COUNTRIES:
       return { ...state, loading: true };
     case COUNTRIES_SUCCESS:
-      return { ...state, loading: false, contrys: action.payload };
+      return { ...state, loading: false, countries: action.payload };
     case FAILED:
       return { ...state, loading: false, error: action.payload };
     default:
