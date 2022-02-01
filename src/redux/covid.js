@@ -1,4 +1,4 @@
-import { URL } from './API';
+import fetchApi from './API';
 
 const GET_COUNTRIES = 'GET_COUNTRIES';
 const COUNTRIES_SUCCESS = 'COUNTRIES_SUCCESS';
@@ -9,12 +9,10 @@ export const getCountries = () => (dispatch) => {
   dispatch({ type: GET_COUNTRIES });
   const fetchCountries = async () => {
     try {
-      const fetching = await fetch(URL);
-      const countries = await fetching.json();
-      console.log(countries);
+      const countries = await fetchApi();
       const payload = countries.map((country) => ({
         id: country.id,
-        name: country.countries,
+        name: country.name,
       }));
       dispatch({ type: COUNTRIES_SUCCESS, payload });
     } catch (e) {

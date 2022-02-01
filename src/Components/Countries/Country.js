@@ -5,7 +5,6 @@ import { getCountries } from '../../redux/covid';
 const Countries = () => {
   const dispatch = useDispatch();
   const { countries } = useSelector((state) => state.covidReducer);
-  //   console.log(error);
 
   useEffect(() => {
     dispatch(getCountries());
@@ -16,7 +15,7 @@ const Countries = () => {
       {
       countries.map((country) => (
         <div key={country.id}>
-          <p>{console.log(country)}</p>
+          {console.log(country)}
         </div>
       ))
       }
