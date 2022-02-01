@@ -13,6 +13,7 @@ export const getCountrys = () => (dispatch) => {
       const countrys = await fetching.json();
       const payload = countrys.map((country) => ({
         id: country.id,
+        name: country.countries,
       }));
       dispatch({ type: COUNTRYS_SUCCESS, payload });
     } catch (e) {
