@@ -12,9 +12,12 @@ export const getCountries = () => (dispatch) => {
   const fetchCountries = async () => {
     try {
       const countries = await fetchApi();
+      console.log(countries);
       const payload = countries.map((country) => ({
         id: country.id,
         name: country.name,
+        today_positive: country.today_confirmed,
+        deaths: country.today_deaths,
       }));
       dispatch({ type: GET_COUNTRIES_SUCCESS, payload });
     } catch (e) {
