@@ -1,4 +1,18 @@
+.links-nav {
+  text-decoration: none;
+  color: white;
+}
+
 .active {
-  color: #00f;
+  color: white;
   text-decoration: underline;
+}
+
+.hover {
+  text-decoration: underline;
+}
+
+.margin-left {
+  margin-left: auto;
+  margin-right: 50px;
 }

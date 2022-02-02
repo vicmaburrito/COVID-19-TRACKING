@@ -1,5 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
+import './Countries.css';
 
 const Countries = () => {
   const { loading, countries, error } = useSelector((state) => state.covidReducer);
@@ -7,22 +8,22 @@ const Countries = () => {
   return (
     <div className="container">
       <div className="row">
-        {error && <span className="mt-5 h3 font-weight-bold">{error}</span>}
+        {error && <span className="mt-5 h3">{error}</span>}
         {loading ? (
           <div className="d-flex justify-content-center mt-5">
-            <span className="mt-5 h3 font-weight-bold">Loading...</span>
+            <span className="mt-5 h3">Loading...</span>
           </div>
         ) : (
           countries.map((country) => (
-            <div key={country.id} className="col col-6 text-center border ">
-              <div className="p-3">
-                <h5 className="mb-0">{country.name}</h5>
-                <span className="small text-uppercase text-muted">
+            <div key={country.id} className="col col-sm-4 text-center border col-size bg-col">
+              <div className="p-3 bg-col">
+                <h5 className="mb-0 bg-col">{country.name}</h5>
+                <span className="text-uppercase">
                   Positive:
                   {country.today_positive}
                 </span>
                 <br />
-                <span className="small text-uppercase text-muted">
+                <span className="text-uppercase">
                   Deaths:
                   {country.deaths}
                 </span>
