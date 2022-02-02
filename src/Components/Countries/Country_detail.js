@@ -1,17 +1,23 @@
-import React from 'react';
+import { React, useEffect } from 'react';
+// import PropTypes from 'prop-types';
 import { useParams } from 'react-router';
-import { fetchCountryDetails } from '../../redux/API';
+import { useSelector, useDispatch } from 'react-redux';
+import { getCountry } from '../../redux/covid';
 
 function CountryDetail() {
   const { id } = useParams();
-
-  const countryDetailData = fetchCountryDetails(id);
-  console.log(countryDetailData);
-
+  const dispatch = useDispatch();
+  console.log(id);
+  useEffect(() => {
+    console.log(id);
+    dispatch(getCountry(id));
+  }, []);
+  const { country } = useSelector((state) => state.countryReducer);
+  // console.log(country);
   return (
     <div className="bg-danger">
-      { countryDetailData.map((country) => (
-        {/* console.log(country) */}
+      {country.map((countryId) => (
+        console.log(countryId)
       ))}
     </div>
   );

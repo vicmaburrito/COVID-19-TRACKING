@@ -11,7 +11,7 @@ const TodayDate = () => {
 
 export const URL = `${BaseUrl}${TodayDate()}`;
 
-const fetchApi = async () => {
+export const fetchApi = async () => {
   const fetching = await fetch(URL);
   const generalData = await fetching.json();
   const date = TodayDate();
@@ -28,5 +28,3 @@ export const fetchCountryDetails = async (id) => {
   const country = Object.values(countryObj);
   return country;
 };
-
-export default fetchApi;

@@ -8,7 +8,7 @@ import './Countries.css';
 
 const Countries = () => {
   const dispatch = useDispatch();
-  const { loading, countries } = useSelector((state) => state.covidReducer);
+  const { loading, countries } = useSelector((state) => state.countriesReducer);
 
   useEffect(() => {
     dispatch(getCountries());
@@ -27,7 +27,7 @@ const Countries = () => {
               <div className="">
                 <div className="d-flex justify-content-end">
                   <Link to={`/CountryDetail/${country.id}`} className="m-2">
-                    <FontAwesomeIcon icon={faArrowAltCircleRight} color="red" />
+                    <FontAwesomeIcon icon={faArrowAltCircleRight} color="red" size="2x" />
                   </Link>
                 </div>
                 <h5 className="">{country.name}</h5>
