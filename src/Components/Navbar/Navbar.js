@@ -5,13 +5,14 @@ import './Navbar.css';
 
 function Navbar() {
   return (
-    <nav className="d-flex align-items-center">
-      <img src={covidLogo} alt="logo" width="100" height="100" />
-      <h1 className="mx-3">Covid-19 tracket</h1>
-      <div className="d-flex justify-content-end">
-        <NavLink to="/" activeclassname="active" className="px-2">Home</NavLink>
-        <NavLink to="/SomeComponent" activeclassname="active" className=" px-2">SomeComponent</NavLink>
-      </div>
+    <nav className="navbar navbar-expand-lg mx-2">
+      <img src={covidLogo} alt="logo" width="50" height="55" className="navbar-brand" />
+      <NavLink to="/" activeclassname="active" className="navbar-brand display-4">Covid Tracker</NavLink>
+      <NavLink to="/About" activeclassname="active" className="navbar-brand display-4">About</NavLink>
+
+      <button className="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <span className="navbar-toggler-icon" />
+      </button>
     </nav>
   );
 }

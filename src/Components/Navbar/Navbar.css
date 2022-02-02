@@ -1,4 +1,13 @@
+.links-nav {
+  text-decoration: none;
+  color: #ccc;
+}
+
 .active {
-  color: #00f;
-  text-decoration: underline;
+  color: #ccc;
+}
+
+.margin-left {
+  margin-left: auto;
+  margin-right: 50px;
 }
