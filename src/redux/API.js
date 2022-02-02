@@ -14,7 +14,6 @@ export const URL = `${BaseUrl}${TodayDate()}`;
 const fetchApi = async () => {
   const fetching = await fetch(URL);
   const generalData = await fetching.json();
-  console.log(generalData);
   const date = TodayDate();
   const countriesObj = generalData.dates[date].countries;
   const countries = Object.values(countriesObj);

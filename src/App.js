@@ -1,25 +1,20 @@
-import React, { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import React from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './Components/Home';
 import Navbar from './Components/Navbar/Navbar';
 import About from './Components/About';
-
+import CountryDetail from './Components/Countries/Country_detail';
 import './App.css';
-import { getCountries } from './redux/covid';
 
 function App() {
-  const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(getCountries());
-  }, [dispatch]);
   return (
     <BrowserRouter>
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/About" element={<About />} />
+        <Route path="/CountryDetail/:id" element={<CountryDetail />} />
       </Routes>
     </BrowserRouter>
   );

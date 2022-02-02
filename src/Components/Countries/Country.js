@@ -1,13 +1,18 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowAltCircleRight } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
-import { URL } from '../../redux/API';
+import { getCountries } from '../../redux/covid';
 import './Countries.css';
 
 const Countries = () => {
+  const dispatch = useDispatch();
   const { loading, countries, error } = useSelector((state) => state.covidReducer);
+
+  useEffect(() => {
+    dispatch(getCountries());
+  }, [dispatch]);
 
   return (
     <div className="container">
@@ -22,7 +27,7 @@ const Countries = () => {
             <div key={country.id} className="col col-6 text-center col-size shadow">
               <div className="">
                 <div className="d-flex justify-content-end">
-                  <Link to={`${URL}/country/${country.id}`} className="m-2">
+                  <Link to={`/CountryDetail/${country.id}`} className="m-2">
                     <FontAwesomeIcon icon={faArrowAltCircleRight} color="red" />
                   </Link>
                 </div>
