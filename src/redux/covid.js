@@ -12,7 +12,7 @@ export const getCountries = () => (dispatch) => {
   const fetchCountries = async () => {
     try {
       const countries = await fetchApi();
-      console.log(countries);
+      // console.log(countries);
       const payload = countries.map((country) => ({
         id: country.id,
         name: country.name,

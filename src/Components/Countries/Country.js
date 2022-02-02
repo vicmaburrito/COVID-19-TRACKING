@@ -8,7 +8,7 @@ import './Countries.css';
 
 const Countries = () => {
   const dispatch = useDispatch();
-  const { loading, countries, error } = useSelector((state) => state.covidReducer);
+  const { loading, countries } = useSelector((state) => state.covidReducer);
 
   useEffect(() => {
     dispatch(getCountries());
@@ -17,7 +17,6 @@ const Countries = () => {
   return (
     <div className="container">
       <div className="row">
-        {error && <span className="mt-5 h3">{error}</span>}
         {loading ? (
           <div className="d-flex justify-content-center mt-5">
             <span className="mt-5 h3">Loading...</span>

@@ -20,4 +20,13 @@ const fetchApi = async () => {
   return countries;
 };
 
+export const fetchCountryDetails = async (id) => {
+  const fetching = await fetch(`${URL}/country/${id}`);
+  const generalData = await fetching.json();
+  const date = TodayDate();
+  const countryObj = generalData.dates[date].countries;
+  const country = Object.values(countryObj);
+  return country;
+};
+
 export default fetchApi;
