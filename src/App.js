@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './Components/Home';
 import Navbar from './Components/Navbar/Navbar';
-import Countries from './Components/Countries/Country';
+import About from './Components/About';
 
 import './App.css';
 import { getCountries } from './redux/covid';
@@ -19,7 +19,7 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/Countries" element={<Countries />} />
+        <Route path="/About" element={<About />} />
       </Routes>
     </BrowserRouter>
   );

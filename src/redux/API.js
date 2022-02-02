@@ -9,7 +9,7 @@ const TodayDate = () => {
   return today;
 };
 
-const URL = `${BaseUrl}${TodayDate()}`;
+export const URL = `${BaseUrl}${TodayDate()}`;
 
 const fetchApi = async () => {
   const fetching = await fetch(URL);

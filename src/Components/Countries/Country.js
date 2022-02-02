@@ -1,5 +1,9 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowAltCircleRight } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-router-dom';
+import { URL } from '../../redux/API';
 import './Countries.css';
 
 const Countries = () => {
@@ -16,7 +20,12 @@ const Countries = () => {
         ) : (
           countries.map((country) => (
             <div key={country.id} className="col col-6 text-center col-size shadow">
-              <div className="pt-5">
+              <div className="">
+                <div className="d-flex justify-content-end">
+                  <Link to={`${URL}/country/${country.id}`} className="m-2">
+                    <FontAwesomeIcon icon={faArrowAltCircleRight} color="red" />
+                  </Link>
+                </div>
                 <h5 className="">{country.name}</h5>
                 <span className="text-uppercase">
                   Positive:
