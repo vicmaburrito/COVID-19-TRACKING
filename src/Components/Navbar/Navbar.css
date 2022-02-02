@@ -1,19 +1,10 @@
-nav {
-  background-color: #1e1e1e;
-  position: relative;
-}
-
 .links-nav {
   text-decoration: none;
   color: #ccc;
 }
 
 .active {
-  color: #123456;
-}
-
-.hover {
-  text-decoration: underline;
+  color: #ccc;
 }
 
 .margin-left {

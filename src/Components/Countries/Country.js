@@ -15,9 +15,9 @@ const Countries = () => {
           </div>
         ) : (
           countries.map((country) => (
-            <div key={country.id} className="col col-6 text-center border-bottom col-size bg-col">
-              <div className="p-3 bg-col">
-                <h5 className="mb-0 bg-col">{country.name}</h5>
+            <div key={country.id} className="col col-6 text-center col-size shadow">
+              <div className="pt-5">
+                <h5 className="">{country.name}</h5>
                 <span className="text-uppercase">
                   Positive:
                   {country.today_positive}
