@@ -1,11 +1,15 @@
+nav {
+  background-color: #1e1e1e;
+  position: relative;
+}
+
 .links-nav {
   text-decoration: none;
-  color: white;
+  color: #ccc;
 }
 
 .active {
-  color: white;
-  text-decoration: underline;
+  color: #123456;
 }
 
 .hover {

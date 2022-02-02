@@ -1,5 +1,9 @@
+.cont-bg {
+  background-color: #1e1e1e;
+}
+
 .col-size {
-  height: auto;
+  height: 12rem;
 }
 
 .bg-col {
