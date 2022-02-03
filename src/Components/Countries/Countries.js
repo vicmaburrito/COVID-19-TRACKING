@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowAltCircleRight } from '@fortawesome/free-solid-svg-icons';
-import { Link } from 'react-router-dom';
 import { getCountries } from '../../redux/covid';
 import './Countries.css';
+import Country from './Country';
 
 const Countries = () => {
   const [search, setSearch] = useState([]);
@@ -25,7 +23,29 @@ const Countries = () => {
     );
   };
   return (
-
+    <div className="container">
+      <div className="row">
+        <h1 className="display-4">Countrys:</h1>
+        <div>
+          <p>Search</p>
+          <input type="text" placeholder="Search" onChange={SearchHandler} />
+        </div>
+        <div style={{ display: 'flex', flexWrap: 'wrap' }}>
+          {search?.map((country) => (
+            <p key={country.id}>{country.name}</p>
+          ))}
+        </div>
+        {loading ? (
+          <div className="d-flex justify-content-center mt-5">
+            <span className="mt-5 h3">Loading...</span>
+          </div>
+        ) : (
+          countries.map((country) => (
+            <Country key={country.id} />
+          ))
+        )}
+      </div>
+    </div>
   );
 };
 
