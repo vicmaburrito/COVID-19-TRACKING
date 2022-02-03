@@ -43,7 +43,7 @@ function CountryDetail() {
                       <FontAwesomeIcon icon={faArrowAltCircleLeft} color="white" />
                     </Link>
                     <h5 className="d-flex justify-content-center display-4">
-                      No Regions in
+                      No Regions avaliable in
                       {' '}
                       {countryId.name}
                     </h5>
