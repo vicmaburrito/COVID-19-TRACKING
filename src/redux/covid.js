@@ -8,9 +8,6 @@ const GET_COUNTRY = 'GET_COUNTRY';
 const GET_COUNTRY_SUCCESS = 'GET_COUNTRY_SUCCESS';
 const GET_COUNTRY_FAILED = 'GET_COUNTRY_FAILED';
 // ADD country = [];
-const initialState = {
-  countries: [], loading: true, error: null,
-};
 
 export const getCountries = () => (dispatch) => {
   dispatch({ type: GET_COUNTRIES });
@@ -59,7 +56,11 @@ export const getCountry = (id) => (dispatch) => {
   fetchCountry();
 };
 
-export const countriesReducer = (state = initialState, action) => {
+const countriesState = {
+  countries: [], loading: true, error: null,
+};
+
+export const countriesReducer = (state = countriesState, action) => {
   switch (action.type) {
     case GET_COUNTRIES:
       return { ...state, loading: true };
@@ -71,12 +72,17 @@ export const countriesReducer = (state = initialState, action) => {
       return state;
   }
 };
-export const countryReducer = (state = {}, action) => {
+
+const countryState = {
+  country: [],
+};
+
+export const countryReducer = (state = countryState, action) => {
   switch (action.type) {
     case GET_COUNTRY:
       return { ...state, loading: true };
     case GET_COUNTRY_SUCCESS:
-      return action.payload;
+      return { ...state, loading: false, country: action.payload };
     case GET_COUNTRY_FAILED:
       return { ...state, loading: false, error: action.payload };
     default:
