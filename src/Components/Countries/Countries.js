@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getCountries } from '../../redux/covid';
 import './Countries.css';
 import Country from './Country';
+import World from '../../assets/44386.png';
 
 const Countries = () => {
   const [search, setSearch] = useState([]);
@@ -25,9 +26,18 @@ const Countries = () => {
   return (
     <div className="container">
       <div className="row">
-        <h1 className="">Countrys:</h1>
+        <div className="d-flex col col-6">
+          <img src={World} alt="world" width="120" height="120" />
+        </div>
+        <div className="align-items-center col col-6 font-weight-bold">
+          <h1 className="mt-3">World</h1>
+          <h2>
+            Countries:
+            {countries.length}
+          </h2>
+        </div>
         <div>
-          <input type="text" placeholder="Search" onChange={SearchHandler} className="p-2 search-country" />
+          <input type="text" placeholder="STATS BY COUNTRY" onChange={SearchHandler} className="p-2 search-country" />
         </div>
         {loading ? (
           <div className="d-flex justify-content-center mt-5">
