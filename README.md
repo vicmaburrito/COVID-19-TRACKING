@@ -16,6 +16,10 @@ The Covid-19 Tracking Project collects information from different data sources t
 
 [Covid Tracker](https://youthful-turing-b029e9.netlify.app/)
 
+<h2>Presentation</h2>
+
+[Loom video](https://youthful-turing-b029e9.netlify.app/)
+
 <h2>🧩 Built With</h2>
 
 React.js
