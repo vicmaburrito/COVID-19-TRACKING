@@ -1,18 +1,23 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowAltCircleRight } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
-import { URL } from '../../redux/API';
+import { getCountries } from '../../redux/covid';
 import './Countries.css';
 
 const Countries = () => {
-  const { loading, countries, error } = useSelector((state) => state.covidReducer);
+  const dispatch = useDispatch();
+  const { loading, countries } = useSelector((state) => state.countriesReducer);
+
+  useEffect(() => {
+    dispatch(getCountries());
+  }, [dispatch]);
 
   return (
     <div className="container">
       <div className="row">
-        {error && <span className="mt-5 h3">{error}</span>}
+        <h1 className="display-4">Countrys:</h1>
         {loading ? (
           <div className="d-flex justify-content-center mt-5">
             <span className="mt-5 h3">Loading...</span>
@@ -22,16 +27,11 @@ const Countries = () => {
             <div key={country.id} className="col col-6 text-center col-size shadow">
               <div className="">
                 <div className="d-flex justify-content-end">
-                  <Link to={`${URL}/country/${country.id}`} className="m-2">
-                    <FontAwesomeIcon icon={faArrowAltCircleRight} color="red" />
+                  <Link to={`/CountryDetail/${country.id}`} className="m-2">
+                    <FontAwesomeIcon icon={faArrowAltCircleRight} color="red" size="2x" />
                   </Link>
                 </div>
                 <h5 className="">{country.name}</h5>
-                <span className="text-uppercase">
-                  Positive:
-                  {country.today_positive}
-                </span>
-                <br />
                 <span className="text-uppercase">
                   Deaths:
                   {country.deaths}

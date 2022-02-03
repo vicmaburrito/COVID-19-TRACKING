@@ -11,14 +11,20 @@ const TodayDate = () => {
 
 export const URL = `${BaseUrl}${TodayDate()}`;
 
-const fetchApi = async () => {
+export const fetchApi = async () => {
   const fetching = await fetch(URL);
   const generalData = await fetching.json();
-  console.log(generalData);
   const date = TodayDate();
   const countriesObj = generalData.dates[date].countries;
   const countries = Object.values(countriesObj);
   return countries;
 };
 
-export default fetchApi;
+export const fetchCountryDetails = async (id) => {
+  const fetching = await fetch(`${URL}/country/${id}`);
+  const generalData = await fetching.json();
+  const date = TodayDate();
+  const countryObj = generalData.dates[date].countries;
+  const country = Object.values(countryObj);
+  return country;
+};

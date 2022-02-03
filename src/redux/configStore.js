@@ -4,10 +4,11 @@ import {
 import logger from 'redux-logger';
 import thunk from 'redux-thunk';
 
-import { covidReducer } from './covid';
+import { countriesReducer, countryReducer } from './covid';
 
 const reducer = combineReducers({
-  covidReducer,
+  countriesReducer,
+  countryReducer,
 });
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
