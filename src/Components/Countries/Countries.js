@@ -25,7 +25,7 @@ const Countries = () => {
   return (
     <div className="container">
       <div className="row">
-        <h1 className="display-4">Countrys:</h1>
+        <h1 className="">Countrys:</h1>
         <div>
           <input type="text" placeholder="Search" onChange={SearchHandler} className="p-2 search-country" />
         </div>

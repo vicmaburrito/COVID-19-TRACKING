@@ -23,14 +23,14 @@ function CountryDetail() {
         country.map((countryId) => (
           <>
             <div className="d-flex row shadow col col-sm-12 mx-2" key={id}>
-              <h1 className="d-flex justify-content-end display-4">
+              <h1 className="d-flex justify-content-end">
                 {countryId.name}
               </h1>
-              <h5 className="d-flex justify-content-start -display-4">
+              <h5 className="d-flex justify-content-start ">
                 Deaths:
                 {countryId.today_positive}
               </h5>
-              <h5 className="d-flex justify-content-start -display-4">
+              <h5 className="d-flex justify-content-start ">
                 Positive:
                 {countryId.today_positive}
               </h5>
