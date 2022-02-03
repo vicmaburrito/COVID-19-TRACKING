@@ -1,29 +1,4 @@
-import React, { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowAltCircleRight } from '@fortawesome/free-solid-svg-icons';
-import { Link } from 'react-router-dom';
-import { getCountries } from '../../redux/covid';
-import './Countries.css';
-
-const Countries = () => {
-  const [search, setSearch] = useState([]);
-  const dispatch = useDispatch();
-  const { loading, countries } = useSelector((state) => state.countriesReducer);
-
-  useEffect(() => {
-    dispatch(getCountries());
-  }, [dispatch]);
-
-  useEffect(() => {
-    setSearch(countries);
-  }, [countries]);
-
-  const SearchHandler = (e) => {
-    setSearch(
-      countries.filter((c) => c.country.toLowerCase().includes(e.target.value)),
-    );
-  };
+function Country() {
   return (
     <div className="container">
       <div className="row">
@@ -34,7 +9,7 @@ const Countries = () => {
         </div>
         <div style={{ display: 'flex', flexWrap: 'wrap' }}>
           {search?.map((country) => (
-            <p key={country.country}>{country.id}</p>
+            <p key={country.id}>{country.name}</p>
           ))}
         </div>
         {loading ? (
@@ -62,6 +37,6 @@ const Countries = () => {
       </div>
     </div>
   );
-};
+}
 
-export default Countries;
+export default Country;
