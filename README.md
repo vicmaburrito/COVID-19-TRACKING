@@ -11,6 +11,11 @@ The Covid-19 Tracking Project collects information from different data sources t
 
 <img width="310" alt="rockets preview" src="/Readme-assets/1643923228204.png"><br>
 <img width="310" alt="rockets preview" src="/Readme-assets/1643924176103.png"><br>
+
+<h2>Live Demo</h2>
+
+[Covid Tracker](https://youthful-turing-b029e9.netlify.app/)
+
 <h2>🧩 Built With</h2>
 
 React.js
