@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowAltCircleRight } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 
-const Country = ({country }) => (
+const Country = ({ country }) => (
   <div className="col col-6 text-center col-size shadow">
     <div className="">
       <div className="d-flex justify-content-end">
@@ -21,5 +21,8 @@ const Country = ({country }) => (
   </div>
 );
 
+Country.propTypes = {
+  country: PropTypes.instanceOf(Object).isRequired,
+};
 
 export default Country;

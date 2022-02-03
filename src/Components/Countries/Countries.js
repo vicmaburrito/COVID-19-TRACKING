@@ -41,7 +41,7 @@ const Countries = () => {
           </div>
         ) : (
           countries.map((country) => (
-            <Country key={country.id} />
+            <Country key={country.id} country={country} />
           ))
         )}
       </div>
