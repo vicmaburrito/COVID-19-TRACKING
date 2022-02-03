@@ -1,5 +1,5 @@
 import React from 'react';
-import Countries from './Countries/Country';
+import Countries from './Countries/Countries';
 
 function Home() {
   return (
