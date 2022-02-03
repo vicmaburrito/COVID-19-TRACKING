@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  className="container"
+>
+  <div
+    className="d-flex justify-content-center mt-5"
+  >
+    <span
+      className="mt-5 h3"
+    >
+      Loading...
+    </span>
+  </div>
+</div>
+`;
