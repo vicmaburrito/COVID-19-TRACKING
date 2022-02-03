@@ -11,7 +11,6 @@ function CountryDetail() {
     dispatch(getCountry(id));
   }, []);
   const { country, loading } = useSelector((state) => state.countryReducer);
-  console.log(country);
   return (
     <div className="container">
       {loading ? (
