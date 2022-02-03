@@ -10,12 +10,38 @@ function CountryDetail() {
   useEffect(() => {
     dispatch(getCountry(id));
   }, []);
-  const { country } = useSelector((state) => state.countryReducer);
+  const { country, loading } = useSelector((state) => state.countryReducer);
+  console.log(country);
   return (
-    <div className="bg-danger">
-      {country.map((countryId) => (
-        <p key={id}>{countryId.today_positive}</p>
-      ))}
+    <div className="container">
+      {loading ? (
+        <div className="d-flex justify-content-center mt-5">
+          <span className="mt-5 h3">Loading...</span>
+        </div>
+      ) : (
+        country.map((countryId) => (
+          <>
+            <div className="d-flex row border col col-sm-12 mx-2" key={id}>
+              <h1 className="d-flex justify-content-end display-4">
+                {countryId.name}
+              </h1>
+              <h5 className="d-flex justify-content-start -display-4">
+                Deaths:
+                {countryId.today_positive}
+              </h5>
+              <h5 className="d-flex justify-content-start -display-4">
+                Positive:
+                {countryId.today_positive}
+              </h5>
+            </div>
+            <div className="mt-5 border">
+              {countryId.regions.map((region) => (
+                <p key={region.id}>{region.name}</p>
+              ))}
+            </div>
+          </>
+        ))
+      )}
     </div>
   );
 }

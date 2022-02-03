@@ -26,5 +26,6 @@ export const fetchCountryDetails = async (id) => {
   const date = TodayDate();
   const countryObj = generalData.dates[date].countries;
   const country = Object.values(countryObj);
+  console.log(country);
   return country;
 };

@@ -44,6 +44,7 @@ export const getCountry = (id) => (dispatch) => {
         name: countryId.name,
         today_positive: countryId.today_confirmed,
         deaths: countryId.today_deaths,
+        regions: countryId.regions,
       }));
       dispatch({ type: GET_COUNTRY_SUCCESS, payload });
     } catch (e) {
@@ -75,6 +76,8 @@ export const countriesReducer = (state = countriesState, action) => {
 
 const countryState = {
   country: [],
+  loading: true,
+  error: null,
 };
 
 export const countryReducer = (state = countryState, action) => {

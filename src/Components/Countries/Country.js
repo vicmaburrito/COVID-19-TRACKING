@@ -32,11 +32,6 @@ const Countries = () => {
                 </div>
                 <h5 className="">{country.name}</h5>
                 <span className="text-uppercase">
-                  Positive:
-                  {country.today_positive}
-                </span>
-                <br />
-                <span className="text-uppercase">
                   Deaths:
                   {country.deaths}
                 </span>
