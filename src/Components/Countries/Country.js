@@ -17,6 +17,7 @@ const Countries = () => {
   return (
     <div className="container">
       <div className="row">
+        <h1 className="display-4">Countrys:</h1>
         {loading ? (
           <div className="d-flex justify-content-center mt-5">
             <span className="mt-5 h3">Loading...</span>
