@@ -19,7 +19,7 @@ const Countries = () => {
 
   const SearchHandler = (e) => {
     setSearch(
-      countries.filter((c) => c.country.toLowerCase().includes(e.target.value)),
+      countries.filter((c) => c.id.toLowerCase().includes(e.target.value)),
     );
   };
   return (
@@ -28,21 +28,18 @@ const Countries = () => {
         <h1 className="display-4">Countrys:</h1>
         <div>
           <p>Search</p>
-          <input type="text" placeholder="Search" onChange={SearchHandler} />
-        </div>
-        <div style={{ display: 'flex', flexWrap: 'wrap' }}>
-          {search?.map((country) => (
-            <p key={country.id}>{country.name}</p>
-          ))}
+          <input type="text" placeholder="Search" onChange={SearchHandler} className="search-country" />
         </div>
         {loading ? (
           <div className="d-flex justify-content-center mt-5">
             <span className="mt-5 h3">Loading...</span>
           </div>
         ) : (
-          countries.map((country) => (
-            <Country key={country.id} country={country} />
-          ))
+          <div style={{ display: 'flex', flexWrap: 'wrap' }}>
+            {search?.map((country) => (
+              <Country key={country.id} country={country} />
+            ))}
+          </div>
         )}
       </div>
     </div>
