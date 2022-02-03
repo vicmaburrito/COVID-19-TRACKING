@@ -18,7 +18,7 @@ The Covid-19 Tracking Project collects information from different data sources t
 
 <h2>Presentation</h2>
 
-[Loom video](https://youthful-turing-b029e9.netlify.app/)
+[Loom video](https://www.loom.com/share/532debb05bb54cd4a0c97066ed9e85ed)
 
 <h2>🧩 Built With</h2>
 
