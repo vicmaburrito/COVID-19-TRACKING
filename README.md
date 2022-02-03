@@ -88,9 +88,9 @@ Feel free to check the <a href="https://github.com/vicmaburrito/COVID-19-TRACKIN
 
 Give a ⭐️ if you like this project!
 
-<!-- <h2>Acknowledgments</h2>
+<h2>Acknowledgments</h2>
 
-Thank you Microverse for your guidance in making a great portfolio for myself! -->
+Original design idea by [Nelson Sakwa on Behance](https://www.behance.net/sakwadesignstudio) the author of the [original design](https://www.behance.net/gallery/31579789/Ballhead-App-(Free-PSDs)).
 
 <h2>📝 License</h2>
 

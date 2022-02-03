@@ -22,8 +22,7 @@ const Country = ({ country }) => (
 );
 
 Country.propTypes = {
-  // eslint-disable-next-line react/require-default-props
-  country: PropTypes.instanceOf(Object),
+  country: PropTypes.instanceOf(Object).isRequired,
 };
 
 export default Country;
