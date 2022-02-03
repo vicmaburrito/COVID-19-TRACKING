@@ -1,4 +1,4 @@
-<h1>Space-Traveler's Hub</h1>
+<h1>Covid-19 Tracking</h1>
 
 The Covid-19 Tracking Project collects information from different data sources to provide comprehensive data for the novel coronavirus, SARS-CoV-2.
 
