@@ -5,3 +5,13 @@
 .col-size {
   height: 12rem;
 }
+
+.search-country {
+  width: 100%;
+  background-color: transparent;
+  border: none;
+}
+
+.search-country::placeholder {
+  color: #ccc;
+} 

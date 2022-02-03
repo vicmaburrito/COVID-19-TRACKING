@@ -27,15 +27,14 @@ const Countries = () => {
       <div className="row">
         <h1 className="display-4">Countrys:</h1>
         <div>
-          <p>Search</p>
-          <input type="text" placeholder="Search" onChange={SearchHandler} className="search-country" />
+          <input type="text" placeholder="Search" onChange={SearchHandler} className="p-2 search-country" />
         </div>
         {loading ? (
           <div className="d-flex justify-content-center mt-5">
             <span className="mt-5 h3">Loading...</span>
           </div>
         ) : (
-          <div style={{ display: 'flex', flexWrap: 'wrap' }}>
+          <div className="d-flex row">
             {search?.map((country) => (
               <Country key={country.id} country={country} />
             ))}
